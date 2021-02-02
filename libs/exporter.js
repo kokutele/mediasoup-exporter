@@ -1,7 +1,7 @@
-const mediasoup = require('mediasoup');
 const express = require('express')
 const pidusage = require('pidusage')
 const promClient = require('prom-client')
+const mediasoup = require('mediasoup')
 
 const collectDefaultMetrics = promClient.collectDefaultMetrics;
 const register = new promClient.Registry()
@@ -30,7 +30,6 @@ const dataConsumers = new Map();
 function runMediasoupObserver()
 {
  mediasoup.observer.on('newworker', (worker) => {
-
   workers.set(worker.pid, worker);
   worker.observer.on('close', () => workers.delete(worker.pid));
 
@@ -456,8 +455,8 @@ module.exports = async function(props) {
    }
   })
 
-
-  const ret = promClient.Registry.merge([register, _register]).metrics()
+  const merged = promClient.Registry.merge([register, _register])
+  const ret = await merged.metrics()
 
   res.set("Content-Type", "text/plain")
   res.send( ret )

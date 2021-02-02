@@ -2,15 +2,25 @@
 
 ## how to use
 
+```js
+npm install mediasoup-exporter
 ```
+
+> we are assuming that library `mediasoup` is installed already.
+
+### snipet
+
+```js
 const exporter = require('mediasoup-exporter')
 
 
 (async () => {
   // ...snip...
-  // after starting Mediasoup server
+  // before starting Mediasoup server
 
   await exporter( { port: 4000 } )
+
+  // ...snip...
 })();
 ```
 

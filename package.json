@@ -10,7 +10,6 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
-    "mediasoup": "^3.6.32",
     "pidusage": "^2.0.21",
     "prom-client": "^13.1.0"
   }
