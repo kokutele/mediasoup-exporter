@@ -20,9 +20,13 @@ exports.getRoutersDump = async ( routers, routerIds ) => {
   const routersDump = []
 
   for( let routerId of routerIds.values() ) {
-    const router = routers.get( routerId )
-    const dump = await router.dump()
-    routersDump.push( dump )
+    try {
+      const router = routers.get( routerId )
+      const dump = await router.dump()
+      routersDump.push( dump )
+    } catch(err) {
+      console.error( err )
+    }
   }
 
   return routersDump
@@ -39,9 +43,13 @@ exports.getProducersStats = async ( producerIds, producers ) => {
 
   let producer, stats
   for( let producerId of producerIds.values() ) {
-    producer = producers.get( producerId )
-    stats = await producer.getStats()
-    producersStats.push( Object.assign( {}, stats[0], { producerId }))
+    try {
+      producer = producers.get( producerId )
+      stats = await producer.getStats()
+      producersStats.push( Object.assign( {}, stats[0], { producerId }))
+    } catch(err) {
+      console.error( err )
+    }
   }
 
   return producersStats
@@ -58,9 +66,13 @@ exports.getConsumersStats = async ( consumerIds, consumers ) => {
 
   let consumer, stats
   for( let consumerId of consumerIds.values() ) {
-    consumer = consumers.get( consumerId )
-    stats = await consumer.getStats()
-    consumersStats.push( Object.assign( {}, stats[0], { consumerId }))
+    try {
+      consumer = consumers.get( consumerId )
+      stats = await consumer.getStats()
+      consumersStats.push(Object.assign({}, stats[0], { consumerId }))
+    } catch(err) {
+      console.error( err )
+    }
   }
 
   return consumersStats

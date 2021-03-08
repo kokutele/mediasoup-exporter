@@ -12,5 +12,8 @@
     "express": "^4.17.1",
     "pidusage": "^2.0.21",
     "prom-client": "^13.1.0"
+  },
+  "devDependencies": {
+    "mediasoup": "^3.6.32"
   }
 }
