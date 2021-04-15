@@ -2,6 +2,7 @@ const mediasoup = require('mediasoup')
 const os = require('os')
 const exporter = require('../index')
 
+const port = process.env.PORT || 4000
 const numWorkers = Object.keys(os.cpus()).length
 
 const settings = {
@@ -16,6 +17,10 @@ const settings = {
 run()
 
 async function run() {
+  // You need to call `exporter()` before calling `mediasoup.createWorker()`
+  await exporter({ port })
+
+  // start workers of mediasoup
   const workers = []
   for( let i = 0; i < numWorkers; i++ ) {
     const worker = await mediasoup.createWorker( settings )
@@ -34,6 +39,5 @@ async function run() {
     }, 120000)
   }
   console.info(`running ${numWorkers} mediasoup Workers...`)
-
-  await exporter({ port: 4000 })
+  console.info(`you can GET metrics via http://localhost:${port}/metrics in prometheus format`)
 }
