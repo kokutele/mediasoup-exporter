@@ -46,7 +46,10 @@ exports.getProducersStats = async ( producerIds, producers ) => {
     try {
       producer = producers.get( producerId )
       stats = await producer.getStats()
-      producersStats.push( Object.assign( {}, stats[0], { producerId }))
+      if( stats instanceof Array && typeof stats[0] === 'object') {
+        const appData = typeof consumer.appData === 'object' ? consumer.appData : {}
+        producersStats.push( Object.assign( {}, stats[0], { producerId, appData }))
+      }
     } catch(err) {
       console.error( err )
     }
@@ -69,7 +72,10 @@ exports.getConsumersStats = async ( consumerIds, consumers ) => {
     try {
       consumer = consumers.get( consumerId )
       stats = await consumer.getStats()
-      consumersStats.push(Object.assign({}, stats[0], { consumerId }))
+      if( stats instanceof Array && typeof stats[0] === 'object') {
+        const appData = typeof consumer.appData === 'object' ? consumer.appData : {}
+        consumersStats.push(Object.assign({}, stats[0], { consumerId, appData }))
+      }
     } catch(err) {
       console.error( err )
     }

@@ -144,7 +144,8 @@ module.exports = async function(props) {
         kind: stats.kind,
         mimeType: stats.mimeType,
         type: stats.type,
-        producerId: stats.producerId
+        producerId: stats.producerId,
+        ...stats.appData
       },
       value: stats.byteCount
     }))
@@ -154,7 +155,8 @@ module.exports = async function(props) {
         kind: stats.kind,
         mimeType: stats.mimeType,
         type: stats.type,
-        producerId: stats.producerId
+        producerId: stats.producerId,
+        ...stats.appData
       },
       value: stats.firCount
     }))
@@ -164,7 +166,8 @@ module.exports = async function(props) {
         kind: stats.kind,
         mimeType: stats.mimeType,
         type: stats.type,
-        producerId: stats.producerId
+        producerId: stats.producerId,
+        ...stats.appData
       },
       value: stats.jitter
     }))
@@ -174,7 +177,8 @@ module.exports = async function(props) {
         kind: stats.kind,
         mimeType: stats.mimeType,
         type: stats.type,
-        producerId: stats.producerId
+        producerId: stats.producerId,
+        ...stats.appData
       },
       value: stats.nackCount
     }))
@@ -184,7 +188,8 @@ module.exports = async function(props) {
         kind: stats.kind,
         mimeType: stats.mimeType,
         type: stats.type,
-        producerId: stats.producerId
+        producerId: stats.producerId,
+        ...stats.appData
       },
       value: stats.nackPacketCount
     }))
@@ -194,7 +199,8 @@ module.exports = async function(props) {
         kind: stats.kind,
         mimeType: stats.mimeType,
         type: stats.type,
-        producerId: stats.producerId
+        producerId: stats.producerId,
+        ...stats.appData
       },
       value: stats.packetCount
     }))
@@ -204,7 +210,8 @@ module.exports = async function(props) {
         kind: stats.kind,
         mimeType: stats.mimeType,
         type: stats.type,
-        producerId: stats.producerId
+        producerId: stats.producerId,
+        ...stats.appData
       },
       value: stats.packetsDiscarded
     }))
@@ -214,7 +221,8 @@ module.exports = async function(props) {
         kind: stats.kind,
         mimeType: stats.mimeType,
         type: stats.type,
-        producerId: stats.producerId
+        producerId: stats.producerId,
+        ...stats.appData
       },
       value: stats.packetsLost
     }))
@@ -224,7 +232,8 @@ module.exports = async function(props) {
         kind: stats.kind,
         mimeType: stats.mimeType,
         type: stats.type,
-        producerId: stats.producerId
+        producerId: stats.producerId,
+        ...stats.appData
       },
       value: stats.packetsRepaired
     }))
@@ -234,7 +243,8 @@ module.exports = async function(props) {
         kind: stats.kind,
         mimeType: stats.mimeType,
         type: stats.type,
-        producerId: stats.producerId
+        producerId: stats.producerId,
+        ...stats.appData
       },
       value: stats.packetsRetransmitted
     }))
@@ -244,7 +254,8 @@ module.exports = async function(props) {
         kind: stats.kind,
         mimeType: stats.mimeType,
         type: stats.type,
-        producerId: stats.producerId
+        producerId: stats.producerId,
+        ...stats.appData
       },
       value: stats.pliCount
     }))
@@ -254,7 +265,8 @@ module.exports = async function(props) {
         kind: stats.kind,
         mimeType: stats.mimeType,
         type: stats.type,
-        producerId: stats.producerId
+        producerId: stats.producerId,
+        ...stats.appData
       },
       value: stats.roundTripTime
     }))
@@ -264,7 +276,8 @@ module.exports = async function(props) {
         kind: stats.kind,
         mimeType: stats.mimeType,
         type: stats.type,
-        producerId: stats.producerId
+        producerId: stats.producerId,
+        ...stats.appData
       },
       value: stats.score
     }))
@@ -282,7 +295,8 @@ module.exports = async function(props) {
         kind: stats.kind,
         mimeType: stats.mimeType,
         type: stats.type,
-        consumerId: stats.consumerId
+        consumerId: stats.consumerId,
+        ...stats.appData
       },
       value: stats.byteCount
     }))
@@ -292,7 +306,8 @@ module.exports = async function(props) {
         kind: stats.kind,
         mimeType: stats.mimeType,
         type: stats.type,
-        consumerId: stats.consumerId
+        consumerId: stats.consumerId,
+        ...stats.appData
       },
       value: stats.firCount
     }))
@@ -302,7 +317,8 @@ module.exports = async function(props) {
         kind: stats.kind,
         mimeType: stats.mimeType,
         type: stats.type,
-        consumerId: stats.consumerId
+        consumerId: stats.consumerId,
+        ...stats.appData
       },
       value: stats.nackCount
     }))
@@ -312,7 +328,8 @@ module.exports = async function(props) {
         kind: stats.kind,
         mimeType: stats.mimeType,
         type: stats.type,
-        consumerId: stats.consumerId
+        consumerId: stats.consumerId,
+        ...stats.appData
       },
       value: stats.nackPacketCount
     }))
@@ -322,7 +339,8 @@ module.exports = async function(props) {
         kind: stats.kind,
         mimeType: stats.mimeType,
         type: stats.type,
-        consumerId: stats.consumerId
+        consumerId: stats.consumerId,
+        ...stats.appData
       },
       value: stats.packetCount
     }))
@@ -332,7 +350,8 @@ module.exports = async function(props) {
         kind: stats.kind,
         mimeType: stats.mimeType,
         type: stats.type,
-        consumerId: stats.consumerId
+        consumerId: stats.consumerId,
+        ...stats.appData
       },
       value: stats.packetsDiscarded
     }))
@@ -342,7 +361,8 @@ module.exports = async function(props) {
         kind: stats.kind,
         mimeType: stats.mimeType,
         type: stats.type,
-        consumerId: stats.consumerId
+        consumerId: stats.consumerId,
+        ...stats.appData
       },
       value: stats.packetsLost
     }))
@@ -352,7 +372,8 @@ module.exports = async function(props) {
         kind: stats.kind,
         mimeType: stats.mimeType,
         type: stats.type,
-        consumerId: stats.consumerId
+        consumerId: stats.consumerId,
+        ...stats.appData
       },
       value: stats.packetsRepaired
     }))
@@ -362,7 +383,8 @@ module.exports = async function(props) {
         kind: stats.kind,
         mimeType: stats.mimeType,
         type: stats.type,
-        consumerId: stats.consumerId
+        consumerId: stats.consumerId,
+        ...stats.appData
       },
       value: stats.packetsRetransmitted
     }))
@@ -372,7 +394,8 @@ module.exports = async function(props) {
         kind: stats.kind,
         mimeType: stats.mimeType,
         type: stats.type,
-        consumerId: stats.consumerId
+        consumerId: stats.consumerId,
+        ...stats.appData
       },
       value: stats.pliCount
     }))
@@ -382,7 +405,8 @@ module.exports = async function(props) {
         kind: stats.kind,
         mimeType: stats.mimeType,
         type: stats.type,
-        consumerId: stats.consumerId
+        consumerId: stats.consumerId,
+        ...stats.appData
       },
       value: stats.roundTripTime
     }))
