@@ -1,5 +1,7 @@
 # mediasoup-exporter
 
+### caution: Do not use this library in production system, which means experimental use cases only. This exporter has a scalability problem. It stores each metrics with labels of consumerIds and producerIds, which is agaist [this best practice](https://prometheus.io/docs/practices/naming/#labels).
+
 ## how to use
 
 ```js
