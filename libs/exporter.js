@@ -503,6 +503,8 @@ module.exports = async function (props) {
       mediasoup_consumers_round_trip_time,
       mediasoup_trasports_recvBitrate,
       mediasoup_trasports_bytesReceived,
+      mediasoup_trasports_sendBitrate,
+      mediasoup_trasports_bytesSent,
     };
 
     const _register = new promClient.Registry();
