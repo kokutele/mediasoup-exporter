@@ -437,6 +437,7 @@ module.exports = async function (props) {
       },
       value: 0,
     };
+
     let mediasoup_trasports_bytesReceived = {
       labels: {
         kind: "bytesReceived",
@@ -444,10 +445,26 @@ module.exports = async function (props) {
       value: 0,
     };
 
+    let mediasoup_trasports_sendBitrate = {
+      labels: {
+        kind: "sendBitrate",
+      },
+      value: 0,
+    };
+
+    let mediasoup_trasports_bytesSent = {
+      labels: {
+        kind: "bytesSent",
+      },
+      value: 0,
+    };
+
     for (const [key, value] of transports) {
       let stats = await value.getStats();
-      mediasoup_trasports_recvBitrate.value += stats[0].recvBitrate;
-      mediasoup_trasports_bytesReceived.value += stats[0].bytesReceived;
+      mediasoup_trasports_recvBitrate.value = stats[0].recvBitrate;
+      mediasoup_trasports_bytesReceived.value = stats[0].bytesReceived;
+      mediasoup_trasports_sendBitrate.value = stats[0].sendBitrate;
+      mediasoup_trasports_bytesSent.value = stats[0].bytesSent;
     }
 
     const obj = {
